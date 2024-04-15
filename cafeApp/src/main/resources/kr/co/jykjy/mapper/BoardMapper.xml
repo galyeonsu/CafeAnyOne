@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.jykjy.mapper.BoardMapper">
+	<select id="getList" resultType="kr.co.jykjy.domain.Board">
+	select * from tbl_board where category = #{category} order by bno desc
+	</select>
+	
+	<select id="read" resultType="kr.co.jykjy.domain.Board">
+	select * from tbl_board where bno = #{bno}
+	</select>
+	
+	<insert id="insert">
+	<!-- insert into tbl_board(title, content) values (#{title}, #{content}) -->
+	insert into tbl_board(title, content, category, id) values (#{title}, #{content}, #{category}, #{id})
+	</insert>
+	
+	<insert id="insertSelectKey">
+	insert into tbl_board(title, content, category, id) values (#{title}, #{content}, #{category}, #{id})
+		<selectKey keyProperty="bno" order="AFTER" resultType="long">
+		select max(bno) from tbl_board
+		</selectKey>
+	</insert>
+	
+	<delete id="delete">
+	delete from tbl_board where bno = #{bno}
+	</delete>
+	
+	<update id="update">
+	update tbl_board set
+		title=#{title}, content=#{content}, updateDate=now()
+	where bno = #{bno}
+	</update>
+	
+	<select id="getTotal" resultType="int">
+	select count(*) from tbl_board 
+	</select>
+	
+	<select id="getCount" resultType="int">
+	select count(*) from tbl_board where category = #{category}
+	<include refid="dynamicSearch" />
+	</select>
+	
+	<sql id="dynamicSearch">
+	<trim prefix="and (" suffix=")" prefixOverrides="or">
+		<foreach collection="typeArr" item="t">
+			<trim prefix="or">
+			<choose>
+				<when test="t == 'T'.toString()">
+				title like concat('%', #{keyword}, '%')
+				</when>
+				<when test="t == 'C'.toString()">
+				content like concat('%', #{keyword}, '%')
+				</when>
+			</choose>
+			</trim>
+		</foreach>
+	</trim>
+	</sql>
+	
+	<select id="getListsWithPaging" resultType="kr.co.jykjy.domain.Board" parameterType="kr.co.jykjy.domain.Criteria">
+	select * from tbl_board where category = #{category}
+	<include refid="dynamicSearch" />
+	order by bno desc limit #{amount} offset #{offset}
+	</select> 
+	
+	<update id="updateReplyCnt">
+	update tbl_board set replyCnt = replyCnt + #{amount} where bno = #{bno}
+	</update>
+</mapper>

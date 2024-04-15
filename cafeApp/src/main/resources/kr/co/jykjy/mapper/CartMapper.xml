@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.co.jykjy.mapper.CartMapper">
+	<insert id="insert">
+		insert into tbl_cart(proName, proPrice, proAmt, stmt, cupSize, cupChoice, cartcate, id, proNo) 
+		values (#{proName}, #{proPrice}, #{proAmt}, #{stmt}, #{cupSize}, #{cupChoice}, #{cartcate}, #{id}, #{proNo})
+		<selectKey keyProperty="cartNo" order="AFTER" resultType="long">
+			select max(cartNo) from tbl_cart
+		</selectKey>
+	</insert>
+	<select id="getCart" resultType="kr.co.jykjy.domain.Cart">
+		<![CDATA[
+			select * from tbl_cart where id = #{id} and cartStmt = 0 and cartcate < 3
+		]]>
+	</select>
+	<select id="CartByParams" resultType="kr.co.jykjy.domain.Cart">
+		<![CDATA[
+			select * from tbl_cart where id = #{id} and cartStmt = 0 and proNo = #{proNo} and cartcate < 3  
+		]]>
+	</select>
+	<select id="getOrderMenu" resultType="kr.co.jykjy.domain.Cart">
+		<![CDATA[
+			select * from tbl_cart where id = #{id} and cartStmt = 1 and cartcate < 3 order by cartNo desc
+		]]>
+	</select>
+	<select id="getList" resultType="kr.co.jykjy.domain.Cart">
+		<![CDATA[
+			select * from tbl_cart where id = #{id} and cartStmt < 2 and cartcate = 3 order by cartNo desc
+		]]>
+	</select>
+	<select id="getOrderList" resultType="kr.co.jykjy.domain.Cart">
+		select * from tbl_cart where id = #{id} and cartStmt = 1 and cartcate = 3 order by cartNo desc
+	</select>
+	<select id="findByCartNo" resultType="kr.co.jykjy.domain.Cart">
+		select * from tbl_cart where id = #{id}
+	</select>
+	<select id="get" resultType="kr.co.jykjy.domain.Cart">
+		<![CDATA[
+			select * from tbl_cart where id = #{id} and cartStmt < 2 and cartcate = 3 and proNo = #{proNo}
+		]]>
+	</select>
+	<update id="update">
+		update tbl_cart set proAmt = #{proAmt}
+	</update>
+	<update id="updateCartcate">
+		update tbl_cart set cartcate = #{cartcate} where cartNo=#{cartNo}
+	</update>
+	<update id="modify">
+		update tbl_cart set proAmt=#{proAmt}, cartStmt=#{cartStmt} where cartNo=#{cartNo}
+	</update>
+	<delete id="remove">
+		delete from tbl_cart where cartNo=#{cartNo}
+	</delete>
+</mapper>

@@ -1,0 +1,157 @@
+@charset "UTF-8";
+
+@media (max-width: 576px) {
+    .order .list.row-cols-2 > * {
+        flex: auto;
+        width: 100%;
+        max-width: 100%;
+    }
+    .order .list li a {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+    }
+    .order .list li .thumb {
+        width: 26%;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+    .order .list li .info {
+        padding-left: 2rem;
+    }
+}
+
+.map{
+	bottom: 5.8rem;
+    display: flex;
+    justify-content: end;
+    width: 100%;
+    padding: 0 2rem;
+    max-width: 896px;
+    z-index: 2;
+}
+
+.product .detail {
+    display: flex;
+    flex-direction: column;
+    color: #1d1d1d;
+    font-size: 1.2rem;
+}
+
+.product .detail .image {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 386px;
+}
+
+.product .detail .info {
+    padding: 0 2rem;
+}
+
+.product .detail .info .name,
+.product .detail .info .price {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.product .detail .info .desc {
+    color: #979797;
+}
+
+@media (min-width: 576px) {
+    .product .detail {
+        /* flex-direction: row; */
+        margin-top: 3rem;
+    }
+
+    .product .detail .image {
+        width: 100%;
+        max-width: 260px;
+    }
+
+    .product .detail .info {
+        margin-top: 2rem;
+    }
+    
+}
+
+
+
+.btno {
+    display: block;
+    background: #01a862;
+    font-size: 1.2rem;
+    border-radius: 1rem;
+    padding: 1.6rem;
+    color: #fff;
+    border: 1px solid #01a862;
+    text-align: center;
+}
+
+/* p {
+    color: black;
+    text-align: center;
+    font-size: large;
+} */
+
+.info .name, .menuScore, .menuReview, .price, .cafeNum{
+		color: black;
+	    text-align: center;
+	    font-size: large;
+}
+
+.detail .name, .score, .review, .price{
+		color: black;
+	    text-align: center;
+	    font-size: large;
+}
+
+main .product .list li a .info .menuScore + .menuReview {
+	color: rgba(0, 0, 0, 0.4);
+}
+
+main .product .list li a .info .cafeNum,
+main .product .list li a .info .menuScore,
+main .product .list li a .info .menuReview {
+	margin: 0.6rem 0;
+}
+
+.product-floating li {
+    text-align: right;
+	}
+.product-floating .btnb {
+	display: inline-block;
+}
+
+.cafe{
+    	object-fit: cover;
+    	height: 20rem;
+}
+
+.add {
+	position: absolute;
+	top: 2.1rem;
+	right: 1.2rem;
+	display: flex;
+	font-size: 1.4rem;
+	top: 0;
+}
+
+.add li a {
+	min-width: 3.4rem;
+	margin-left: .8rem;
+	padding: .8rem .6rem 0 .6rem;
+	color: #444;
+	border: 1px solid #444;
+	border-radius: .4rem;
+	opacity: .6;
+}
+
+#map {
+    margin: 0 auto;
+}
+
+.product-floating .btn {
+		display: inline-block;
+		text-align: right;
+}

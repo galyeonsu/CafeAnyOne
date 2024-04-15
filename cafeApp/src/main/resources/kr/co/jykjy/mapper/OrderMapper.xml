@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.co.jykjy.mapper.OrderMapper">
+	
+	<insert id="insert">
+		insert into tbl_order(orderCode, payMethod, cardBank, cardNumber, orderPrice, address, complete, id, email, cartNo) 
+		values (#{orderCode}, #{payMethod}, #{cardBank}, #{cardNumber}, #{orderPrice}, #{address}, #{complete}, #{id}, #{email}, #{cartNo})
+		<selectKey keyProperty="orderNo" order="AFTER" resultType="long">
+			select max(orderNo) from tbl_order
+		</selectKey>
+	</insert>
+	<select id="getList" resultType="kr.co.jykjy.domain.Order">
+		select * from tbl_order order by orderNo desc
+	</select>
+	<update id="update">
+		update tbl_order set complete = #{complete} where orderNo = #{orderNo}
+	</update>
+</mapper>

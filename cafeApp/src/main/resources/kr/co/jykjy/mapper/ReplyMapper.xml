@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.jykjy.mapper.ReplyMapper">
+	<insert id="insert">
+	insert into tbl_reply(content, id, bno) values (#{content}, #{id}, #{bno})
+	</insert>
+	
+	<select id="read" resultType="kr.co.jykjy.domain.Reply">
+	select * from tbl_reply where rno = #{rno}
+	</select>
+	
+	<update id="update">
+	update tbl_reply set content = #{content} where rno = #{rno}
+	</update>
+
+	<delete id="delete">
+	delete from tbl_reply where rno = #{rno}
+	</delete>
+	
+	<!-- 댓글이 있는 게시글 삭제처리를 위해 -->
+	<delete id="deleteAll">
+	delete from tbl_reply where bno = #{bno}
+	</delete>
+	
+	<select id="getList" resultType="kr.co.jykjy.domain.Reply">
+	select * from tbl_reply where bno = #{bno} 
+	<![CDATA[
+	and rno < #{lastRno}
+	order by rno desc limit 5
+	]]>
+	
+	<!-- select * from tbl_reply where bno = #{bno} order by rno asc limit #{cri.amount} offset #{cri.offset} -->
+	</select>
+	
+	<select id="getTotal" resultType="int">
+	select count(*) from tbl_reply where bno = #{bno}
+	</select>
+</mapper>

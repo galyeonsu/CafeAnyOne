@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.jykjy.mapper.AttachMapper">
+	<insert id="insert">
+	insert into tbl_attach(uuid, origin, filePath, bno, image) values (#{uuid}, #{origin}, #{filePath}, #{bno}, #{image})
+	</insert>
+	
+	<delete id="delete">
+	delete from tbl_attach where uuid = #{uuid}
+	</delete>
+	
+	<delete id="deleteAll">
+	delete from tbl_attach where bno = #{bno}
+	</delete>
+	
+	<!-- find by bno -->
+	<select id="selectList" resultType="kr.co.jykjy.domain.Attach">
+	select * from tbl_attach where bno = #{bno}
+	</select>
+	
+	<select id="getOldFiles" resultType="kr.co.jykjy.domain.Attach">
+	select * from tbl_attach where path = date_format(adddate(now(), -1), '%Y/%m/%d')
+	</select>
+	
+	<!-- 첨부파일의 수정 작업 -->
+	<delete id="deleteOption">
+	delete from tbl_attach where bno = #{bno} 
+	<foreach collection="uuids" item="uuid" open="and uuid not in (" close=")" separator=",">
+		#{uuid}
+	</foreach>
+	<!-- foreach 내부의 uuid : 삭제하지 않고 남길 첨부파일 -->
+	</delete>
+</mapper>

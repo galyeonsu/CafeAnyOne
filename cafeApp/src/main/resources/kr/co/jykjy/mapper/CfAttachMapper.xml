@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.jykjy.mapper.CfAttachMapper">
+	<insert id="attachInsert">
+		insert into tbl_cfattach (cfUuid, cfOrigin, cfFilePath, cafeNo) 
+		values (#{cfUuid}, #{cfOrigin}, #{cfFilePath}, #{cafeNo})
+	</insert>
+	
+	<select id="findByNo" resultType="kr.co.jykjy.domain.CfAttach">
+		select * from tbl_cfattach where cafeNo = #{cafeNo}
+	</select>
+</mapper>

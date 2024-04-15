@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.jykjy.mapper.ProductMapper">
+	<select id="getList" resultType="kr.co.jykjy.domain.Product">
+		select * from tbl_product where prCategory = #{category} order by proNo desc
+	</select>
+	<select id="findByProNo" resultType="kr.co.jykjy.domain.Product">
+		select * from tbl_product where proNo = #{proNo}
+	</select>
+	<insert id="insert">
+		insert into tbl_product (proName, proDetail, proPrice, proSize, proStmt, prCategory, cupChoice) 
+		values (#{proName}, #{proDetail}, #{proPrice}, #{proSize}, #{proStmt}, #{prCategory}, #{cupChoice})
+		<selectKey keyProperty="proNo" order="AFTER" resultType="long">
+			select max(proNo) from tbl_product
+		</selectKey>
+	</insert>
+	<select id="getTotalCount" resultType="int">
+		select count(*) from tbl_product where proNo > 0
+	</select>
+	<delete id="delete">
+		delete from tbl_product where proNo = #{proNo}
+	</delete>
+	<update id="update">
+		update tbl_product set proName = #{proName}, proDetail = #{proDetail}, proPrice = #{proPrice}, 
+		proSize = #{proSize}, proStmt = #{proStmt}, prCategory = #{prCategory}, cupChoice = #{cupChoice} where proNo = #{proNo}
+	</update>
+</mapper>
