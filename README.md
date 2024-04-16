@@ -12,5 +12,13 @@
        <li>아마존 S3로 상품 이미지 관리 (현재 제공 안함)</li>
     </ul>
   </div>
+  <div>
+    <h1>API</h1>
+    <a href="https://apis.map.kakao.com/">카카오지도</a>
+    <a href="https://portone.io/korea/ko">포트원</a>
+  </div>
+  <div>
+    <h1>구조도</h1>
+  </div>
 </div>
 
