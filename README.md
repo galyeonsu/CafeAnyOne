@@ -39,11 +39,22 @@
   </div>
   <div>
     <h1>시연 영상 (회원 페이지)</h1>
-    <a href="https://www.youtube.com/watch?v=jfQM9xa1ZDY&t=2s">링</a>
+    <a href="https://www.youtube.com/watch?v=jfQM9xa1ZDY&t=2s">링크</a>
   </div>
   <div>
     <h1>메인 페이지</h1>
     <img src="https://github.com/galyeonsu/CafeAnyOne/assets/149341822/a9f8aee1-d501-4dd8-8f65-f299fe2a5cdd">
+  </div>
+  <div>
+  <h1>
+    회고록
+  </h1>
+    <ul>
+      <li>
+이번 프로젝트에서 제가 맡은 역할은 회원 역할 이었습니다.회원은 프로젝트의 핵심 기능이기 떄문에 회원기능이 먼저 어느정도 구현되어야 다른 기능을 맡은 팀원들이 서비스를 작성 할 수 있기 떄문에<br/> 부담감이 컸지만 팀원들이 부담감을 주지 않고 오히려 큰힘이 되어 주어서 부담 없이 회원 기능들을 수행 할 수 있었습니다. 큰 어려움은 이메일인증이었는데 구글링을 했지만 eclipse에서 이메일발송은 자료가 몇개 나오지 않았지만  stack overflow 사이트에서 자료를 발견해 Maven에서 dependency와 몇가지 프로퍼티를 추가해 해결했습니다.여기서 개발자는 검색능력과 문제가 발생했을때 그 문제를 해결 하기 위한 문제해결 능력이 개발자로서의 역량에 크게 필요하다고 느꼈습니다.
+      </li>
+    </ul>
+    
   </div>
 </div>
 
