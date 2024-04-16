@@ -1,7 +1,9 @@
 <div>
   <h1>semi-CafeAnyOne</h1>
   스타벅스 어플을 기반으로 하여 웹으로 클론하여 JSP&Servlet을 활용하여 구현한 웹프로젝트 입니다.
+  <br/>
   <img src="https://github.com/galyeonsu/CafeAnyOne/assets/149341822/34eddfaa-6d34-400f-856a-5777725f4cbd" width="1000px">
+    <br/>
   <div>
     <ul>
       <li><a href="https://near-blackbird-72e.notion.site/18c0d6f8e278438a9fa661e6594792be">요구사항정의</a></li>
