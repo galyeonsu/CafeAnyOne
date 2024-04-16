@@ -19,6 +19,7 @@
   </div>
   <div>
     <h1>구조도</h1>
+    <img src="https://github.com/galyeonsu/CafeAnyOne/assets/149341822/e0b563f1-cc60-46ef-8b37-94d2ff1ce023">
   </div>
 </div>
 
