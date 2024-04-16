@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.jykjy.mapper.PrAttachMapper">
+	<select id="findByNo" resultType="kr.co.jykjy.domain.PrAttach">
+		select * from tbl_prattach where proNo = #{proNo}
+	</select>
+	<select id="getListAttatch" resultType="kr.co.jykjy.domain.PrAttach">
+		select * from tbl_prattach
+	</select>
+	<insert id="attachInsert">
+		insert into tbl_prattach (prUuid, origin, filePath, proNo) 
+		values (#{prUuid}, #{origin}, #{filePath}, #{proNo})
+	</insert>
+	<delete id="attachDelete">
+		delete from tbl_prattach where proNo = #{proNo}
+	</delete>
+</mapper>

@@ -1,0 +1,98 @@
+
+.member-id {
+	text-align: center;
+}
+
+.ms_user_stat {
+	font-size: 2em;
+}
+
+.ms_user_stat {
+	margin-left: 18px;
+}
+
+.mymain {
+	margin-left: 14px;
+	display: flex;
+	margin: 20px;
+	display: flex;
+}
+
+.usergrade {
+	color: #006b00;
+}
+
+.card-img-top {
+	border-radius: 2rem;
+	margin-top: 10px;
+}
+
+.card-body {
+	text-align: center;
+}
+
+.nameing {
+	margin-left: 50px;
+	margin-top: 200px;
+}
+
+.cate {
+	margin-left: 13px
+}
+
+.solid {
+	border-bottom: 1px solid;
+	padding: 20px;
+	margin-left: 14px
+}
+
+.cate li {
+	border-bottom: 1px solid;
+	padding: 30px;
+}
+
+.cate li a {
+	display: flex;
+	justify-content: space-between;
+	font-size: 1.56rem;
+}
+
+.cate ul {
+	border-top: 2px solid;
+}
+
+main {
+	font-family: "Malgun Gothic", "굴림", "Gulim", "Arial";
+}
+
+.btn-primary {
+	color: #fff;
+	background-color: #006b00;
+	border-color: #006b00 !important;
+	border-radius: 5rem;
+	float: right;
+}
+/* myplay table */
+.myplay {
+	width: 100%;
+	text-align: center;
+}
+.MPL {
+	padding-left: 20px;
+}
+.lain {
+	border-bottom: solid 0.5px;
+}
+.board-number {
+	font-size: 2000px;
+	text-align: center;
+	text-align: left;
+}
+.cate a {
+	color:black;
+}
+.wrap span{
+	color: #6daf98
+}
+
+	

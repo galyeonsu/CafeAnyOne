@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.jykjy.mapper.PaymentMapper">
+	<insert id="insert">
+		insert into tbl_payment(orderCode, proName, proPrice, proAmt, cupSize, cartNo) 
+		values (#{orderCode}, #{proName}, #{proPrice}, #{proAmt}, #{cupSize}, #{cartNo})
+		<selectKey keyProperty="payNo" order="AFTER" resultType="long">
+			select max(payNo) from tbl_payment
+		</selectKey>
+	</insert>
+	<select id="getList" resultType="kr.co.jykjy.domain.Payment">
+		select * from tbl_payment where orderCode = #{orderCode} order by payNo desc
+	</select>
+</mapper>

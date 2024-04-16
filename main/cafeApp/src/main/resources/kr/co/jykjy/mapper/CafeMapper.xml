@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.co.jykjy.mapper.CafeMapper">
+	
+	<insert id="insert">
+		insert into tbl_cafe(cafeAddr, cafeTell, lat, lng)
+		values (#{cafeAddr}, #{cafeTell}, #{lat}, #{lng})
+		<selectKey keyProperty="cafeNo" order="AFTER" resultType="long">
+			select max(cafeNo) from tbl_cafe
+		</selectKey>
+	</insert>
+	
+	<select id="getList" resultType="kr.co.jykjy.domain.Cafe">
+		select * from tbl_cafe where cafeNo >= 0
+	</select>
+	
+	<select id="findByCafeNo" resultType="kr.co.jykjy.domain.Cafe">
+		select * from tbl_cafe where cafeNo = #{cafeNO}
+	</select>
+
+
+</mapper>
