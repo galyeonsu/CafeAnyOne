@@ -18,8 +18,35 @@
     <a href="https://portone.io/korea/ko">포트원</a>
   </div>
   <div>
+    <h1>맡은 역할</h1>
+    <h2>회원</h2>
+    <h2>업무성과</h2>
+    <ul>
+      <li>회원 가입시 토큰을 이용한 이메일인증을 통해 보안을 강화 했습니다 </li>
+      <li>이메일을 아이디로 사용함으로써 아이디와 이메일을 중복으로 사용 할 수없게 했습니다</li>
+    
+      <li>비밀번호 찾기시 회원가입한 이메일로 링크를 보내 비밀번호 변경을 할 수 있게 하여 사용자에게 편의설을 제공했습니다.</li>
+      <li>마이 페이지를 통해 사용자가 작성한 리뷰,댓글,주문 목록을 조회하여 사용자의 편의성 증대 했습니다.  </li>
+      <li>마이 페이지를 통해 프로필사진 변경을 할 수 있어 사용자의 경험을 상승 시켰습니다. </li>
+      <li></li>
+      
+    </ul>
+  </div>
+  <div>
     <h1>구조도</h1>
     <img src="https://github.com/galyeonsu/CafeAnyOne/assets/149341822/e0b563f1-cc60-46ef-8b37-94d2ff1ce023">
+  </div>
+  <div>
+    <h1>DB명세서</h1>
+    <img src="https://github.com/galyeonsu/CafeAnyOne/assets/149341822/d80ae4ec-5ff4-4300-b832-a965d798ae0e">
+  </div>
+  <div>
+    <h1>시연 영상 (회원 페이지)</h1>
+    <a href="https://www.youtube.com/watch?v=jfQM9xa1ZDY&t=2s">링</a>
+  </div>
+  <div>
+    <h1>메인 페이지</h1>
+    <img src="https://github.com/galyeonsu/CafeAnyOne/assets/149341822/a9f8aee1-d501-4dd8-8f65-f299fe2a5cdd">
   </div>
 </div>
 
