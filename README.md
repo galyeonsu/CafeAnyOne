@@ -5,6 +5,7 @@
   <img src="https://github.com/galyeonsu/CafeAnyOne/assets/149341822/34eddfaa-6d34-400f-856a-5777725f4cbd" width="1000px">
     <br/>
   <div>
+    
     <ul>
       <li><a href="https://near-blackbird-72e.notion.site/18c0d6f8e278438a9fa661e6594792be">요구사항정의</a></li>
       <li>반응형으로 제작</li>
@@ -21,6 +22,8 @@
     <a href="https://portone.io/korea/ko">포트원</a>
   </div>
   <div>
+    <h1>기능구현정리</h1>
+      <img src="https://github.com/galyeonsu/CafeAnyOne/assets/149341822/ce298eba-768d-465c-97c2-938044005aa7">
     <h1>맡은 역할</h1>
     <h2>회원</h2>
     <h2>업무성과</h2>
@@ -43,6 +46,8 @@
   <div>
     <h1>시연 영상 (회원 페이지)</h1>
     <a href="https://www.youtube.com/watch?v=jfQM9xa1ZDY&t=2s">링크</a>
+    
+    
   </div>
   <div>
     <h1>메인 페이지</h1>
