@@ -5,7 +5,6 @@
   <img src="https://github.com/galyeonsu/CafeAnyOne/assets/149341822/34eddfaa-6d34-400f-856a-5777725f4cbd" width="1000px">
     <br/>
   <div>
-    
     <ul>
       <li><a href="https://near-blackbird-72e.notion.site/18c0d6f8e278438a9fa661e6594792be">요구사항정의</a></li>
       <li>반응형으로 제작</li>
